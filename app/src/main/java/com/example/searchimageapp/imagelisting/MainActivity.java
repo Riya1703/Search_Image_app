@@ -91,9 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isFirstLoad = false;
 
                     paginationScrollListener.setLoaded();
-
-                    /*if (listImages.size()>= imageSearchBaseResponse.getData().size())
-                        paginationScrollListener.setLastPage();*/
                 }
                 else
                     Toast.makeText(MainActivity.this, "Please try again.", Toast.LENGTH_SHORT).show();
