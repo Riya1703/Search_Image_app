@@ -18,15 +18,15 @@ class ImagesDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         onCreate(db)
     }
 
-    fun readComment(imageId: String?): ArrayList<String> {
-        val images = ArrayList<String>()
+    fun readComment(imageId: String?): String {
+        var images:String = ""
         val db = writableDatabase
         var cursor: Cursor? = null
         try {
             cursor = db.rawQuery("select * from " + DBContract.UserEntry.TABLE_NAME + " WHERE " + DBContract.UserEntry.COLUMN_ID + "='" + imageId + "'", null)
         } catch (e: SQLiteException) {
             db.execSQL(SQL_CREATE_ENTRIES)
-            return ArrayList()
+            return String.toString()
         }
 
         var id: String
@@ -36,11 +36,23 @@ class ImagesDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 id = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_ID))
                 comment = cursor.getString(cursor.getColumnIndex(DBContract.UserEntry.COLUMN_COMMENT))
 
-                images.add(comment)
+                images = comment
                 cursor.moveToNext()
             }
         }
         return images
+    }
+
+    fun delete(imageId: String?): Boolean {
+        // Gets the data repository in write mode
+        val db = writableDatabase
+        // Define 'where' part of query.
+        val selection = DBContract.UserEntry.COLUMN_ID + " LIKE ?"
+        // Specify arguments in placeholder order.
+        val selectionArgs = arrayOf(imageId)
+        // Issue SQL statement.
+        db.delete(DBContract.UserEntry.TABLE_NAME, selection, selectionArgs)
+        return true
     }
 
     companion object {
