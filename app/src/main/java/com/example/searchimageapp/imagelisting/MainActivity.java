@@ -66,6 +66,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rvImages.addOnScrollListener(paginationScrollListener);
     }
 
+    /**
+     * Method is used to get images from gallery search API.
+     * Infinite scroll is implemented.
+     * @param name String
+     */
     private void getImages(String name) {
         viewModel.getImages(name, currentPage).observe(this, new Observer<ImageSearchBaseResponse>() {
             @Override

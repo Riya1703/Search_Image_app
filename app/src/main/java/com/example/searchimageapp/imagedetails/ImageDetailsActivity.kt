@@ -50,6 +50,9 @@ class ImageDetailsActivity : AppCompatActivity(), View.OnClickListener {
         getComments()
     }
 
+    /**
+     * Gets comments from the SQLite database in form of string and convert it into array list.
+     */
     private fun getComments() {
         comments = dbHelper.readComment(imageSearch?.id)
         if(!TextUtils.isEmpty(comments)){
@@ -59,11 +62,17 @@ class ImageDetailsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /**
+     * Set adapter
+     */
     private fun setAdapter(listItems: ArrayList<String>) {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
         listView.adapter = adapter
     }
 
+    /**
+     * Set title and image view.
+     */
     private fun setUI() {
         tvTitle.setText(imageSearch?.title)
         Glide.with(this).load(imageSearch?.images?.get(0)?.link)
@@ -85,18 +94,17 @@ class ImageDetailsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /**
+     * Method is used to save comments in the SQLit database.
+     */
     private fun submitComment() {
         imageComments.add(etComment.text.toString())
+        // Convert imageComment array list to string to insert into database.
         val inputString = gson.toJson(imageComments)
         // Gets the data repository in write mode
         val db = dbHelper.writableDatabase
 
         // Delete existing record before saving new record
-        /*String query = "Select * From STUDENTS where name = '"+name+"'";
-        if(sqLiteHelper.getData(query).getCount()>0){
-
-        }*/
-
         if(comments.length > 0){
             dbHelper.delete(imageSearch?.id)
         }

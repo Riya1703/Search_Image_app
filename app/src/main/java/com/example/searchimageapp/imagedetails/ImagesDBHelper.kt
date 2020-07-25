@@ -50,13 +50,12 @@ class ImagesDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val selection = DBContract.UserEntry.COLUMN_ID + " LIKE ?"
         // Specify arguments in placeholder order.
         val selectionArgs = arrayOf(imageId)
-        // Issue SQL statement.
+
         db.delete(DBContract.UserEntry.TABLE_NAME, selection, selectionArgs)
         return true
     }
 
     companion object {
-        // If you change the database schema, you must increment the database version.
         const val DATABASE_VERSION = 1
         const val DATABASE_NAME = "Images.db"
 
