@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Search Image App</string>
+    <string name="search">Search</string>
+    <string name="submit">Submit</string>
+    <string name="enter_comment">Enter Comment</string>
+</resources>

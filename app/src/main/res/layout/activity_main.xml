@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/v16dp"
+    android:background="@color/colorWhite"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/v8dp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_search_box"
+            android:drawablePadding="@dimen/v8dp"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:inputType="textAutoComplete"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingStart="@dimen/v12dp"
+            android:paddingTop="@dimen/v8dp"
+            android:paddingEnd="@dimen/v12dp"
+            android:paddingBottom="@dimen/v8dp"
+            android:singleLine="true"
+            android:textSize="@dimen/txtSize19" />
+
+        <ImageButton
+            android:id="@+id/ib_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/app_name"
+            android:paddingStart="@dimen/v16dp"
+            android:paddingTop="@dimen/v8dp"
+            android:paddingEnd="@dimen/v16dp"
+            android:paddingBottom="@dimen/v8dp"
+            android:src="@drawable/ic_search_grey" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_images"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/v16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_search" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

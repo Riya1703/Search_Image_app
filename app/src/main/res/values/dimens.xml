@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //defining sizes for margin and padding
+    <dimen name="v0dp">0dp</dimen>
+    <dimen name="v1dp">1dp</dimen>
+    <dimen name="v2dp">2dp</dimen>
+    <dimen name="v3dp">3dp</dimen>
+    <dimen name="v4dp">4dp</dimen>
+    <dimen name="v5dp">5dp</dimen>
+    <dimen name="v6dp">6dp</dimen>
+    <dimen name="v7dp">7dp</dimen>
+    <dimen name="v8dp">8dp</dimen>
+    <dimen name="v10dp">10dp</dimen>
+    <dimen name="v12dp">12dp</dimen>
+    <dimen name="v13dp">13dp</dimen>
+    <dimen name="v14dp">14dp</dimen>
+    <dimen name="v15dp">15dp</dimen>
+    <dimen name="v16dp">16dp</dimen>
+    <dimen name="v18dp">18dp</dimen>
+    <dimen name="v20dp">20dp</dimen>
+    <dimen name="v22dp">22dp</dimen>
+    <dimen name="v24dp">24dp</dimen>
+    <dimen name="v32dp">32dp</dimen>
+    <dimen name="v84dp">84dp</dimen>
+    <dimen name="v250dp">250dp</dimen>
+
+    //defining size for text
+    <dimen name="txtSize10">10sp</dimen>
+    <dimen name="txtSize12">12sp</dimen>
+    <dimen name="txtSize14">14sp</dimen>
+    <dimen name="txtSize15">15sp</dimen>
+    <dimen name="txtSize16">16sp</dimen>
+    <dimen name="txtSize17">17sp</dimen>
+    <dimen name="txtSize18">18sp</dimen>
+    <dimen name="txtSize19">19sp</dimen>
+    <dimen name="txtSize20">20sp</dimen>
+    <dimen name="txtSize22">22sp</dimen>
+    <dimen name="txtSize23">23sp</dimen>
+    <dimen name="txtSize24">24sp</dimen>
+
+</resources>
